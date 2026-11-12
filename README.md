@@ -2,6 +2,17 @@
 
 **Question:** Can we flag card fraud without labels? Isolation Forest and Local Outlier Factor (LOF) are fitted without using `Class`. Labels only tune hyperparameters on validation PR-AUC and evaluate after scoring.
 
+## Portfolio
+
+| ID | Repository | Focus |
+|---|---|---|
+| FD01 | [fraud-logistic-baseline](https://github.com/Patotricks15/fraud-logistic-baseline) | Logistic baseline |
+| FD02 | [fraud-cost-sensitive-xgboost](https://github.com/Patotricks15/fraud-cost-sensitive-xgboost) | Cost-sensitive XGBoost |
+| **FD03** | **fraud-unsupervised-anomaly** (this repo) | Isolation Forest and LOF |
+| FD04 | [fraud-velocity-graph-features](https://github.com/Patotricks15/fraud-velocity-graph-features) | Velocity and graph features (blocked) |
+| FD05 | [fraud-threshold-cost-policy](https://github.com/Patotricks15/fraud-threshold-cost-policy) | Cost-based threshold policy |
+| FD06 | [fraud-drift-monitoring](https://github.com/Patotricks15/fraud-drift-monitoring) | Drift monitoring |
+
 ## Data
 
 - Credit Card Fraud Detection, Kaggle `mlg-ulb/creditcardfraud` (real anonymized transactions, September 2013, 284,807 rows, 492 frauds). The same dataset as [FD01](../fraud-logistic-baseline/README.md).
