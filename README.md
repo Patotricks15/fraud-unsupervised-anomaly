@@ -19,16 +19,18 @@
 
 ## Results
 
-Not yet produced. The notebook needs the Kaggle dataset, which is not downloaded to this workstation. After running the notebook on Kaggle, fill in this table. The FD01 row is the logistic baseline result from FD01, also pending.
+Real data, test window scored once after tuning on validation. Validation: 56 frauds. Test: 52 frauds.
 
 | Model | Window | PR-AUC | ROC-AUC | Recall @ 1% alerts |
 |---|---|---|---|---|
-| FD01 logistic baseline (tuned C) | Test | pending | pending | pending |
-| Isolation Forest, baseline | Validation | pending | pending | pending |
-| Isolation Forest, tuned | Validation | pending | pending | pending |
-| Isolation Forest, tuned | Test | pending | pending | pending |
-| LOF, tuned (subsample 50,000) | Validation | pending | pending | pending |
-| LOF, tuned (subsample 50,000) | Test | pending | pending | pending |
+| FD01 logistic baseline (tuned C) | Test | 0.690 | 0.976 | 0.808 |
+| Isolation Forest, baseline | Validation | 0.037 | 0.951 | 0.375 |
+| Isolation Forest, tuned (300 trees, max_samples 4096) | Validation | 0.049 | 0.954 | 0.536 |
+| Isolation Forest, tuned | Test | 0.078 | 0.936 | 0.596 |
+| LOF, tuned (n_neighbors 50, subsample 50,000) | Validation | 0.050 | 0.731 | 0.393 |
+| LOF, tuned (n_neighbors 50, subsample 50,000) | Test | 0.041 | 0.774 | 0.308 |
+
+Reading: unsupervised scores rank fraud far below the supervised baseline on PR-AUC (0.078 vs 0.690 on test). Isolation Forest is the better unsupervised detector here. LOF has the weakest ROC-AUC on validation (0.731). Neither reaches the FD01 PR-AUC. Whether they catch frauds that FD01 misses was not measured, so the second clause of the decision rule is still open.
 
 Figures (written by the notebook): `reports/figures/fd03_score_hist.png` (anomaly score by class on test, log y-axis) and `reports/figures/fd03_pr_curve.png` (PR curves for both models on test).
 
